@@ -1,39 +1,41 @@
 <script>
-  import Button from "./Button.svelte";
-  import Selector from "./Selector.svelte";
   import QrCode from "svelte-qrcode";
-  import QrCodePlaceHolder from "./QrCodePlaceHolder.svelte";
-
   let text = "";
 </script>
 
 <style>
   h1,
-  main {
+  main,
+  footer {
     font-family: sans-serif;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
   }
   main {
-    text-align: center;
-    display: flex; /* or inline-flex */
+    display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    min-height: 200px;
+    justify-content: center;
   }
   textarea {
-    flex: 2;
-    min-width: 10ex;
+    flex: 1 1 auto;
+    min-width: 400px;
+    min-height: 200px;
   }
-  QrCode {
-    flex: 1;
+  .code {
+    flex: 0 0 200px;
   }
 </style>
 
 <h1>QR Code Generator</h1>
 <main>
   <textarea bind:value={text}></textarea>
+  <div class="code">
   {#if text.length > 0}
-    <QrCode value="{text}" class="code" />
-  {:else}
-    <QrCode value="Type your text" class="code" />
+    <QrCode value="{text}" />
   {/if}
+  </div>
 </main>
+<footer>
+  <a href="https://svelte.dev/">Svelte</a> app using <a href="https://www.npmjs.com/package/svelte-qrcode">svelte-qrcode</a> by <a href="https://z720.net">z720</a>
+</footer>
