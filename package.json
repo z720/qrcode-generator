@@ -1,5 +1,5 @@
 {
-  "name": "svelte",
+  "name": "qrcode-generator",
   "version": "1.0.0",
   "devDependencies": {
     "npm-run-all": "^4.1.5",
@@ -22,6 +22,6 @@
     "start:dev": "sirv public --dev",
     "deploy": "npm run build && npx gh-pages -d build"
   },
-  "keywords": ["svelte", "starter"],
-  "description": "Svelte example starter project"
+  "keywords": [],
+  "description": ""
 }
