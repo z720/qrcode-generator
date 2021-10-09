@@ -11,6 +11,7 @@
     "sirv-cli": "^0.3.1"
   },
   "dependencies": {
+    "sirv": "^1.0.17",
     "svelte": "^3.32.3",
     "svelte-qrcode": "1.0.0"
   },
