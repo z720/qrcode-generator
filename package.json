@@ -18,7 +18,7 @@
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
-    "start": "sirv public --host 0.0.0.0",
+    "start": "sirv public --host 0.0.0.0 --port 8080",
     "start:dev": "sirv public --dev",
     "deploy": "npm run build && npx gh-pages -d public"
   },
