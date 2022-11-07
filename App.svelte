@@ -1,6 +1,15 @@
 <script>
   import QrCode from "svelte-qrcode";
   let text = "";
+
+  import { onMount } from "svelte";
+  // Prefill text on load
+  onMount(async () => {
+    // lookup for URL parameter
+    if (window.location.search) {
+      text = window.location.search.slice(1);
+    }
+  });
 </script>
 
 <style>
