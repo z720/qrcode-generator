@@ -1,11 +1,11 @@
 <script>
   import QrCode from "svelte-qrcode";
-  let text = "";
+  let text = "", customSize = 200;
 </script>
 
 <style>
   h1,
-  main,
+  main, aside,
   footer {
     font-family: sans-serif;
     margin: 0 auto;
@@ -32,10 +32,16 @@
   <textarea bind:value={text}></textarea>
   <div class="code">
   {#if text.length > 0}
-    <QrCode value="{text}" />
+    <QrCode value="{text}" size="{customSize}"/>
   {/if}
   </div>
 </main>
+<aside>
+  <label>Image size
+    <input bind:value={customSize} type=number />
+  </label>
+
+</aside>
 <footer>
   <a href="https://svelte.dev/">Svelte</a> app using <a href="https://www.npmjs.com/package/svelte-qrcode">svelte-qrcode</a> by <a href="https://z720.net">z720</a>
 </footer>
