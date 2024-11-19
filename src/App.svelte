@@ -1,7 +1,14 @@
 <script>
   import QrCode from "svelte-qrcode";
+  import { onMount } from 'svelte';
+  
   const version = __APP_VERSION__, app_name = __APP_NAME__;
   let text = $state(""), customSize = $state(200);
+  onMount(() => {
+      // Get query string from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      text = urlParams.get('text') || '';
+  });
 </script>
 
 
@@ -32,7 +39,7 @@
 <aside>
   <label>Image size
     <input bind:value={customSize} type=number />
-  </label> {text.length}
+  </label> (length: {text.length})
 </aside>
 <main>
   <textarea bind:value={text}></textarea>
