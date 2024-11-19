@@ -8,6 +8,7 @@ export default defineConfig({
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
     __APP_NAME__: JSON.stringify(process.env.npm_package_name),
   },
+  base: "./",
   build: {
     outDir: 'public',
     emptyOutDir: true, // also necessary
