@@ -6,6 +6,8 @@ Created with CodeSandbox
 
 # Changelog
 
+- 1.3.0 (16/03/25):
+    - add buidl date in footer
 - 1.2.0 (20/11/24): 
     - PRefil from URL with ?text=
     - Switch to svelte 5
