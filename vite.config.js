@@ -7,6 +7,7 @@ export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
     __APP_NAME__: JSON.stringify(process.env.npm_package_name),
+    __BUILD_DATE__: new Date(),
   },
   base: "./",
   build: {

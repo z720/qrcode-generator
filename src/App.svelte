@@ -2,7 +2,7 @@
   import QrCode from "svelte-qrcode";
   import { onMount } from 'svelte';
   
-  const version = __APP_VERSION__, app_name = __APP_NAME__;
+  const version = __APP_VERSION__, app_name = __APP_NAME__, build_date = __BUILD_DATE__;
   let text = $state(""), customSize = $state(200);
   onMount(() => {
       // Get query string from URL
@@ -50,5 +50,5 @@
   </div>
 </main>
 <footer>
-  {app_name} {version} - <small><a href="https://svelte.dev/">Svelte</a> app using <a href="https://www.npmjs.com/package/svelte-qrcode">svelte-qrcode</a> by <a href="https://z720.net">z720</a></small>
+  <a href="https://github.com/z720/qrcode-generator" title="{build_date}">{app_name} {version}</a> - <small><a href="https://svelte.dev/">Svelte</a> app using <a href="https://www.npmjs.com/package/svelte-qrcode">svelte-qrcode</a> by <a href="https://z720.net">z720</a></small>
 </footer>
